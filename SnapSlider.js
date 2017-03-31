@@ -73,7 +73,9 @@ var SnapSlider = React.createClass({
         this.setState({value: value, item: i});
 
         //callback
-        this.props.onSlidingComplete();
+        setTimeout( () => {
+            this.props.onSlidingComplete()
+        }, 1);
     },
     /*
     componentWillUpdate() {
