@@ -43,6 +43,11 @@ var SnapSlider = React.createClass({
             minimumValue: 0,
             maximumValue: 1,
         };
+    },    
+    setItem(item) {
+        var sliderRatio = this.props.maximumValue / (this.props.items.length - 1);
+        var value = sliderRatio * item;
+        this.setState({...this.state, value: value, item: item});
     },
     _sliderStyle() {
         return [defaultStyles.slider, {width: this.state.sliderWidth, left: this.state.sliderLeft}, this.props.style];
